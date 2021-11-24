@@ -48,17 +48,24 @@
     
 </head>
 <body>
+   
+        <!-- <iframe src="sound.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+        </iframe>  -->
+
+    <audio autoplay  controls id="playAudio" style="display: none;">
+        <source src="sound.mp3">
+    </audio>
+       
     <div id='konten'><div class="foto"><div class="image">
         <!-- Foto --><img id="ftKm" src="data:image/jpeg;base64,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" width="100px" height="100px" onClick="klikfoto();"/></div>
         <span style="font-weight:700;font-size: 13px" id="sp1"><div id="lope" style="display:inline-block;align-items:center;justify-content:center;">&#9829;</div></span>
         <div id="sp2" style="display:none;"><span style="font-weight:700;font-size: 13px" id="finish"></span></div>
         </div>
         
-       <audio autoplay loop controls volume="0.1" id="playAudio" style="display: none;">
-        <source src="sound.mp3">
-    </audio>
+        
         
         <div id='scrollImage'>
+            
           <p>Hai&nbsp;<b id="kamu"></b>&nbsp; ><</p>
           <p>Ciyeeeee</p>
           <p>Ciyeeeee</p>
@@ -66,21 +73,25 @@
           <p>geser kekiri</p>
           <p>iya bagus</p>
           <p>sekali lagi dong</p>
-          <p>taraa..yang hari ini ultah</p>
+          <p>taraa..yang hari ini ulang tahun</p>
           <p>Selamat...</p>
+          <p>happy birthday...</p>
           <p>Panjang umur yaa</p>
+          <p>barakallahu fii umrik...</p>
+          <p>HAHAHA</p>
           <p>Makin tua aja nih wkwk</p>
           <p>Ngejar umur aku yak. haha</p>
           <p>Candaa wlee<img style="margin-left:10px;" alt="Pentol" src="https://c.tenor.com/AlUwZp0ih_wAAAAi/pentol-quby.gif" height="70" /></p>
           <p>Oh iya</p>
           <p>Sehat selalu yaa</p>
-          <p>dan di aaminin semua doanya</p>
+          <p>dan di aaminin semua doanya yang baik</p>
           <p><img style="margin-right:10px;" alt="Pentol" src="https://c.tenor.com/1Si3A6alsiEAAAAi/pentol-quby.gif" height="70" />
           Okeyy?</p>
           <p>Wish you all the best&nbsp;<span id="wrnRed">><</span></p>
+          <p>ke warung beli bihun<br>pulangnya ketemu irda<br>hei lu yang ulang tahun<br>bahagia selalu ya. wkwk</p>
           <p>geser sekali lagi </p>
           <p>dimana makan seblaknya? hik hik</p>
-          <p>Klik Foto di atas da..~<img style="margin-left:10px;" alt="Pentol" src="https://c.tenor.com/oQ_6wxtMrx0AAAAi/pentol-quby.gif" height="70" /></p>
+          <p>Klik Foto di atas ya da..~<img style="margin-left:10px;" alt="Pentol" src="https://c.tenor.com/oQ_6wxtMrx0AAAAi/pentol-quby.gif" height="70" /></p>
         </div></div>
         
         <div id="contTom"><a class='button whatsapp' onClick='bukaWa();'><i class='icon whatsapp'></i>Kirim</a></div></div>
@@ -89,12 +100,13 @@
         finish = "Selamat ulang tahun";
                     
         //Opsi WhatsApp
-         function bukaWa(){window.location = "https://api.whatsapp.com/send?phone=&text=Hai, Aku " + "" + nama + ", " + "%0A%0A" + "" + nama + "" + " udah bacain semuanya. thank you ya" + " *" + author + ". hahaha " + "udah gabut bikin ini semua><" + "%0A%0A" + "*" + "Dikirim:" + "*" + "%20" + dateTime;} 
+         function bukaWa(){window.location = "https://api.whatsapp.com/send?phone=+6285364623827=&text=Hai, Aku " + "" + nama + ", " + "%0A%0A" + "" + nama + "" + " udah bacain semuanya. thank you ya" + " *" + author + ". hahaha " + "udah gabut bikin ini semua><" + "%0A%0A" + "*" + "Dikirim:" + "*" + "%20" + dateTime;} 
         </script>
          
-        <script type="text/javascript">    
-             document.addEventListener('click', function() { document.getElementById('playAudio').play() }, { once: true });
-       
+        <script type="text/javascript">     
+
+        document.addEventListener('click', function() { document.getElementById('playAudio').play() }, { once: true });
+        
                     var today = new Date();var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+'.';var dateTime = date;
                     const swals = Swal.mixin({
                         cancelButtonColor: '#909090',
@@ -102,6 +114,7 @@
                         allowOutsideClick: false,
                     });
                     async function mulai(){
+            
                         var { value: nama } = await swals.fire({
                             title: 'Assalamualaikum.. siapa nama mu?',
                             input: 'text',
@@ -120,8 +133,16 @@
                             });                
                           if(author != nama){
                             document.getElementById("sp1").innerHTML = "Dari " + author + ", Untuk " + window.nama + "!";
-                            window.author = author;                   
-                            await swals.fire(`Sekarang lihat ini ya &#10084;&#65039;`);
+                            window.author = author;   
+                            await swals.fire({
+                            title: nama + ', sekarang tanggal berapa ya?',
+                            input: 'text',
+                            confirmButtonText: 'Lanjut', });       
+                            await swals.fire({
+                            title: 'yakin?',
+                            // input: 'text',
+                            confirmButtonText: 'iya dong', });               
+                            await swals.fire(`okeee. Sekarang lihat ini ya &#10084;&#65039;`);
                             setTimeout(showDiv, 100);                                    
                        } else {
                             await swals.fire('Nama tidak boleh kosong/sama dengan nama kamu!');
