@@ -54,9 +54,9 @@
         <div id="sp2" style="display:none;"><span style="font-weight:700;font-size: 13px" id="finish"></span></div>
         </div>
         
-        <audio style="display:none;margin:20px 0;"  autoplay loop>
-          <source src="sound.mp3" type="audio/mpeg">
-        </audio>
+       <audio autoplay loop controls id="playAudio" style="display: none;">
+        <source src="sound.mp3">
+    </audio>
         
         <div id='scrollImage'>
           <p>Hai&nbsp;<b id="kamu"></b>&nbsp; ><</p>
@@ -92,7 +92,9 @@
          function bukaWa(){window.location = "https://api.whatsapp.com/send?phone=&text=Hai, Aku " + "" + nama + ", " + "%0A%0A" + "" + nama + "" + " udah bacain semuanya. thank you ya" + " *" + author + ". hahaha " + "udah gabut bikin ini semua><" + "%0A%0A" + "*" + "Dikirim:" + "*" + "%20" + dateTime;} 
         </script>
          
-        <script type="text/javascript">            
+        <script type="text/javascript">    
+             document.addEventListener('click', function() { document.getElementById('playAudio').play() }, { once: true });
+       
                     var today = new Date();var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+'.';var dateTime = date;
                     const swals = Swal.mixin({
                         cancelButtonColor: '#909090',
